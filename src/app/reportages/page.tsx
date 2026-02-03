@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getAllPosts } from '@/lib/posts';
 import ArticleCard from '@/components/ArticleCard';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Reportages',
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
 export default function ReportagesPage() {
   const allPosts = getAllPosts();
 
-  // Filter posts that have "reportage" or "enquête" in title, or are investigative pieces
   const reportages = allPosts.filter(post => {
     const title = post.post_title.toLowerCase();
     const content = post.post_content.toLowerCase();
@@ -24,34 +24,44 @@ export default function ReportagesPage() {
   });
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
-      <div className="text-center mb-12">
-        <h1 className="font-[var(--font-serif)] text-4xl font-bold mb-2">Reportages & Enquêtes</h1>
-        <p className="font-[var(--font-body)] text-[var(--color-ink-lighter)]">
-          Investigations, portraits et reportages de terrain
-        </p>
-        <div className="w-16 h-0.5 bg-[var(--color-accent)] mx-auto mt-4" />
+    <div>
+      {/* Page header */}
+      <div className="bg-[var(--color-ink)] text-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14">
+          <div className="gold-line mb-5" />
+          <h1 className="font-[var(--font-serif)] text-4xl md:text-5xl font-black tracking-tight">Reportages & Enquêtes</h1>
+          <p className="font-[var(--font-body)] text-white/40 mt-3">
+            Investigations, portraits et reportages de terrain
+          </p>
+        </div>
       </div>
 
-      {reportages.length > 0 ? (
-        <>
-          {/* Featured reportage */}
-          <section className="mb-12">
-            <ArticleCard post={reportages[0]} featured />
-          </section>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
+        {reportages.length > 0 ? (
+          <>
+            <ScrollReveal variant="scale">
+              <div className="mb-16">
+                <ArticleCard post={reportages[0]} featured />
+              </div>
+            </ScrollReveal>
 
-          <div className="h-px bg-[var(--color-rule)] my-8" />
+            <div className="gold-line-center w-full mb-14" />
 
-          {/* Rest of reportages */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reportages.slice(1).map((post) => (
-              <ArticleCard key={post.ID} post={post} />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+              {reportages.slice(1).map((post, i) => (
+                <ScrollReveal key={post.ID} delay={i % 3 * 80}>
+                  <ArticleCard post={post} />
+                </ScrollReveal>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="text-center py-24">
+            <span className="font-[var(--font-serif)] text-6xl text-[var(--color-rule)] block mb-4">&#9670;</span>
+            <p className="text-[var(--color-ink-lighter)]">Aucun reportage pour le moment.</p>
           </div>
-        </>
-      ) : (
-        <p className="text-center text-[var(--color-ink-lighter)]">Aucun reportage pour le moment.</p>
-      )}
+        )}
+      </div>
     </div>
   );
 }

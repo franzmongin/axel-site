@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import StickyHeader from "@/components/StickyHeader";
+import MobileNav from "@/components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,34 +12,37 @@ export const metadata: Metadata = {
   description: "Enquêtes, reportages et réflexions par Axel Mongin. Un espace d'exploration guidé par un seul élan : comprendre et faire comprendre.",
 };
 
-function Header() {
+function HeaderContent() {
   return (
-    <header className="border-b border-[var(--color-rule)]">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Top bar */}
-        <div className="flex items-center justify-between py-3 border-b border-[var(--color-rule)]">
-          <span className="font-[var(--font-sans)] text-xs text-[var(--color-ink-lighter)] tracking-wider uppercase">
-            Journalisme & Investigation
-          </span>
-          <span className="font-[var(--font-sans)] text-xs text-[var(--color-ink-lighter)]">
-            {new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
-          </span>
-        </div>
+    <div className="max-w-7xl mx-auto px-6 md:px-10">
+      {/* Top accent bar */}
+      <div className="flex items-center justify-between py-2 border-b border-white/8">
+        <span className="font-[var(--font-sans)] text-[0.55rem] tracking-[0.25em] uppercase text-white/50">
+          Journalisme &middot; Investigation &middot; Reportage
+        </span>
+        <span className="font-[var(--font-sans)] text-[0.55rem] text-white/40 hidden md:block">
+          {new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+        </span>
+      </div>
 
-        {/* Masthead */}
-        <div className="py-6 text-center">
-          <Link href="/">
-            <h1 className="font-[var(--font-serif)] text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-ink)]">
+      {/* Main header */}
+      <div className="flex items-center justify-between py-4 md:py-5">
+        <Link href="/" className="group flex items-center gap-4">
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-[var(--color-gold)] transition-colors duration-500">
+            <img
+              src="/uploads/2025/03/Avatar-Axel-2.png"
+              alt="Axel Mongin"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <span className="font-[var(--font-serif)] text-xl md:text-2xl font-bold tracking-tight text-white">
               Axel Mongin
-            </h1>
-          </Link>
-          <p className="mt-1 font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)] tracking-wide">
-            Enquêtes &middot; Reportages &middot; Réflexions
-          </p>
-        </div>
+            </span>
+          </div>
+        </Link>
 
-        {/* Navigation */}
-        <nav className="flex items-center justify-center gap-8 pb-4">
+        <nav className="hidden md:flex items-center gap-7">
           <Link href="/" className="nav-link">Accueil</Link>
           <Link href="/articles" className="nav-link">Articles</Link>
           <Link href="/reportages" className="nav-link">Reportages</Link>
@@ -45,47 +50,69 @@ function Header() {
           <Link href="/a-propos" className="nav-link">À propos</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
         </nav>
+        <MobileNav />
       </div>
-    </header>
+    </div>
   );
 }
 
 function Footer() {
   return (
-    <footer className="border-t border-[var(--color-rule)] mt-16">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="font-[var(--font-serif)] text-xl font-bold mb-3">Axel Mongin</h3>
-            <p className="font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)] leading-relaxed">
+    <footer className="bg-[var(--color-ink)] text-white/50 mt-24">
+      {/* Gold line separator */}
+      <div className="gold-line-center w-full" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Brand column */}
+          <div className="md:col-span-5">
+            <h3 className="font-[var(--font-serif)] text-3xl font-bold text-white mb-2">
+              Axel Mongin
+            </h3>
+            <div className="gold-line mb-5" />
+            <p className="font-[var(--font-body)] text-sm leading-relaxed max-w-sm text-white/60">
               Journaliste passionné par l&apos;investigation et les reportages terrain.
-              Comprendre et faire comprendre.
+              Un espace d&apos;exploration guidé par un seul élan : comprendre et faire comprendre.
             </p>
           </div>
-          <div>
-            <h4 className="font-[var(--font-sans)] text-xs font-semibold uppercase tracking-wider mb-3 text-[var(--color-ink-light)]">
+
+          {/* Nav column */}
+          <div className="md:col-span-3 md:col-start-7">
+            <h4 className="font-[var(--font-sans)] text-[0.55rem] font-bold uppercase tracking-[0.25em] mb-5 text-[var(--color-gold)]">
               Navigation
             </h4>
-            <ul className="space-y-2">
-              <li><Link href="/articles" className="font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)] hover:text-[var(--color-accent)]">Articles</Link></li>
-              <li><Link href="/reportages" className="font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)] hover:text-[var(--color-accent)]">Reportages</Link></li>
-              <li><Link href="/videos" className="font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)] hover:text-[var(--color-accent)]">Vidéos</Link></li>
-              <li><Link href="/a-propos" className="font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)] hover:text-[var(--color-accent)]">À propos</Link></li>
+            <ul className="space-y-3">
+              <li><Link href="/articles" className="font-[var(--font-sans)] text-sm text-white/60 hover:text-white transition-colors duration-300">Articles</Link></li>
+              <li><Link href="/reportages" className="font-[var(--font-sans)] text-sm text-white/60 hover:text-white transition-colors duration-300">Reportages</Link></li>
+              <li><Link href="/videos" className="font-[var(--font-sans)] text-sm text-white/60 hover:text-white transition-colors duration-300">Vidéos</Link></li>
+              <li><Link href="/a-propos" className="font-[var(--font-sans)] text-sm text-white/60 hover:text-white transition-colors duration-300">À propos</Link></li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-[var(--font-sans)] text-xs font-semibold uppercase tracking-wider mb-3 text-[var(--color-ink-light)]">
+
+          {/* Contact column */}
+          <div className="md:col-span-3">
+            <h4 className="font-[var(--font-sans)] text-[0.55rem] font-bold uppercase tracking-[0.25em] mb-5 text-[var(--color-gold)]">
               Contact
             </h4>
-            <p className="font-[var(--font-sans)] text-sm text-[var(--color-ink-lighter)]">
+            <a
+              href="mailto:axelmongin@gmail.com"
+              className="font-[var(--font-sans)] text-sm text-white/60 hover:text-[var(--color-gold)] transition-colors duration-300"
+            >
               axelmongin@gmail.com
-            </p>
+            </a>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-[var(--color-rule)] text-center">
-          <p className="font-[var(--font-sans)] text-xs text-[var(--color-ink-lighter)]">
+
+        {/* Bottom bar */}
+        <div className="mt-16 pt-6 border-t border-white/8 flex items-center justify-between">
+          <p className="font-[var(--font-sans)] text-[0.65rem] text-white/40">
             &copy; {new Date().getFullYear()} Axel Mongin. Tous droits réservés.
           </p>
+          <div className="flex items-center gap-1 text-white/40">
+            <span className="font-[var(--font-serif)] text-xs italic">comprendre</span>
+            <span className="text-[var(--color-gold)] text-xs">&amp;</span>
+            <span className="font-[var(--font-serif)] text-xs italic">faire comprendre</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -100,8 +127,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="antialiased">
-        <Header />
-        <main className="min-h-screen">
+        <StickyHeader>
+          <HeaderContent />
+        </StickyHeader>
+        <main>
           {children}
         </main>
         <Footer />
