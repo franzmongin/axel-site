@@ -22,7 +22,7 @@ export default function Home() {
         {heroPost?.featuredImage && (
           <img
             src={heroPost.featuredImage}
-            alt={heroPost.post_title}
+            alt={heroPost.title}
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
@@ -40,12 +40,12 @@ export default function Home() {
             <div className="gold-line mb-6" />
             <span className="tag mb-5 inline-block">À la une</span>
             {heroPost && (
-              <Link href={`/articles/${heroPost.post_name}`} className="block group">
+              <Link href={`/articles/${heroPost.slug}`} className="block group">
                 <h1 className="font-[var(--font-serif)] text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-5 max-w-3xl tracking-tight">
-                  {heroPost.post_title}
+                  {heroPost.title}
                 </h1>
                 <p className="font-[var(--font-body)] text-white/70 text-lg leading-relaxed max-w-xl mb-6 hidden md:block">
-                  {extractExcerpt(heroPost.post_content, 200)}
+                  {extractExcerpt(heroPost.body, 200)}
                 </p>
                 <div className="flex items-center gap-5">
                   <div className="flex items-center gap-3">
@@ -56,11 +56,11 @@ export default function Home() {
                   </div>
                   <span className="w-1 h-1 rounded-full bg-[var(--color-gold)]" />
                   <time className="font-[var(--font-sans)] text-[0.6rem] text-white/60 uppercase tracking-[0.15em]">
-                    {formatDate(heroPost.post_date)}
+                    {formatDate(heroPost.date)}
                   </time>
                   <span className="w-1 h-1 rounded-full bg-[var(--color-gold)]" />
                   <span className="font-[var(--font-sans)] text-[0.6rem] text-white/60">
-                    {estimateReadingTime(heroPost.post_content)} min
+                    {estimateReadingTime(heroPost.body)} min
                   </span>
                   <span className="ml-6 font-[var(--font-sans)] text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)] group-hover:tracking-[0.3em] transition-all duration-500">
                     Lire l&apos;article &rarr;
@@ -89,22 +89,22 @@ export default function Home() {
           {/* Large card */}
           {featuredPosts[0] && (
             <ScrollReveal variant="left">
-              <Link href={`/articles/${featuredPosts[0].post_name}`} className="block group">
+              <Link href={`/articles/${featuredPosts[0].slug}`} className="block group">
                 <article className="card-overlay relative h-[400px] md:h-[480px] overflow-hidden">
                   {featuredPosts[0].featuredImage && (
                     <img
                       src={featuredPosts[0].featuredImage}
-                      alt={featuredPosts[0].post_title}
+                      alt={featuredPosts[0].title}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[800ms]"
                     />
                   )}
                   <div className="card-content absolute bottom-0 left-0 right-0 p-8">
                     <div className="gold-line mb-4" />
                     <h3 className="font-[var(--font-serif)] text-2xl md:text-3xl font-bold text-white leading-tight mb-3">
-                      {featuredPosts[0].post_title}
+                      {featuredPosts[0].title}
                     </h3>
                     <p className="font-[var(--font-body)] text-sm text-white/70 leading-relaxed max-w-md hidden md:block">
-                      {extractExcerpt(featuredPosts[0].post_content, 150)}
+                      {extractExcerpt(featuredPosts[0].body, 150)}
                     </p>
                   </div>
                 </article>
@@ -115,22 +115,22 @@ export default function Home() {
           {/* Two stacked cards */}
           <div className="flex flex-col gap-8">
             {featuredPosts.slice(1, 3).map((post, i) => (
-              <ScrollReveal key={post.ID} variant="right" delay={i * 120}>
-                <Link href={`/articles/${post.post_name}`} className="block group">
+              <ScrollReveal key={post.slug} variant="right" delay={i * 120}>
+                <Link href={`/articles/${post.slug}`} className="block group">
                   <article className="card-overlay relative h-[220px] md:h-[226px] overflow-hidden">
                     {post.featuredImage && (
                       <img
                         src={post.featuredImage}
-                        alt={post.post_title}
+                        alt={post.title}
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[800ms]"
                       />
                     )}
                     <div className="card-content absolute bottom-0 left-0 right-0 p-6">
                       <h3 className="font-[var(--font-serif)] text-lg font-bold text-white leading-snug mb-1">
-                        {post.post_title}
+                        {post.title}
                       </h3>
                       <time className="font-[var(--font-sans)] text-[0.55rem] text-white/60 uppercase tracking-[0.1em]">
-                        {formatDate(post.post_date)}
+                        {formatDate(post.date)}
                       </time>
                     </div>
                   </article>
@@ -189,13 +189,13 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {gridPosts[0] && (
             <ScrollReveal variant="scale" className="md:col-span-2 lg:col-span-2">
-              <Link href={`/articles/${gridPosts[0].post_name}`} className="block group">
+              <Link href={`/articles/${gridPosts[0].slug}`} className="block group">
                 <article className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                   {gridPosts[0].featuredImage && (
                     <div className="aspect-[4/3] overflow-hidden img-reveal">
                       <img
                         src={gridPosts[0].featuredImage}
-                        alt={gridPosts[0].post_title}
+                        alt={gridPosts[0].title}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -203,13 +203,13 @@ export default function Home() {
                   <div>
                     <div className="accent-line mb-4" />
                     <time className="font-[var(--font-sans)] text-[0.58rem] text-[var(--color-ink-lighter)] uppercase tracking-[0.1em]">
-                      {formatDate(gridPosts[0].post_date)}
+                      {formatDate(gridPosts[0].date)}
                     </time>
                     <h3 className="font-[var(--font-serif)] text-2xl font-bold leading-tight mt-2 mb-3 group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                      {gridPosts[0].post_title}
+                      {gridPosts[0].title}
                     </h3>
                     <p className="font-[var(--font-body)] text-sm text-[var(--color-ink-light)] leading-relaxed line-clamp-4">
-                      {extractExcerpt(gridPosts[0].post_content, 200)}
+                      {extractExcerpt(gridPosts[0].body, 200)}
                     </p>
                     <span className="inline-block mt-4 font-[var(--font-sans)] text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-[var(--color-accent)] group-hover:tracking-[0.2em] transition-all duration-300">
                       Lire &rarr;
@@ -225,7 +225,7 @@ export default function Home() {
             </ScrollReveal>
           )}
           {gridPosts.slice(2).map((post, i) => (
-            <ScrollReveal key={post.ID} delay={i * 80}>
+            <ScrollReveal key={post.slug} delay={i * 80}>
               <ArticleCard post={post} />
             </ScrollReveal>
           ))}
@@ -267,8 +267,8 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
           {listPosts.map((post, i) => (
-            <ScrollReveal key={post.ID} variant={i % 2 === 0 ? 'left' : 'right'} delay={i % 2 * 80}>
-              <Link href={`/articles/${post.post_name}`} className="block group">
+            <ScrollReveal key={post.slug} variant={i % 2 === 0 ? 'left' : 'right'} delay={i % 2 * 80}>
+              <Link href={`/articles/${post.slug}`} className="block group">
                 <article className="flex gap-6 py-6 border-b border-[var(--color-rule)] hover:border-[var(--color-gold)] transition-colors duration-500">
                   {/* Decorative number */}
                   <span className="font-[var(--font-serif)] text-3xl font-black text-[var(--color-gold)]/40 group-hover:text-[var(--color-gold)] transition-colors duration-500 flex-shrink-0 w-12 pt-1">
@@ -276,17 +276,17 @@ export default function Home() {
                   </span>
                   <div className="flex-1 min-w-0">
                     <time className="font-[var(--font-sans)] text-[0.55rem] text-[var(--color-ink-lighter)] uppercase tracking-[0.1em]">
-                      {formatDate(post.post_date)}
+                      {formatDate(post.date)}
                     </time>
                     <h3 className="font-[var(--font-serif)] text-base font-bold leading-snug mt-1 group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                      {post.post_title}
+                      {post.title}
                     </h3>
                   </div>
                   {post.featuredImage && (
                     <div className="w-20 h-20 flex-shrink-0 overflow-hidden hidden md:block">
                       <img
                         src={post.featuredImage}
-                        alt={post.post_title}
+                        alt={post.title}
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                       />
                     </div>

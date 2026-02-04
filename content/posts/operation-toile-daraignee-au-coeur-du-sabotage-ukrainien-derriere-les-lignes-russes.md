@@ -1,0 +1,20 @@
+---
+title: 'Opération « Toile d’araignée » : au cœur du sabotage ukrainien derrière les lignes russes'
+slug: operation-toile-daraignee-au-coeur-du-sabotage-ukrainien-derriere-les-lignes-russes
+date: '2025-06-05T15:23:42.000Z'
+featuredImage: /uploads/2025/06/Toile-daraignee.png
+category: article
+excerpt: 'Le 1er juin 2025, l’Ukraine a déclenché une offensive inédite en territoire ennemi : l’opération « Toile d’araignée ». En ciblant cinq bases stratégiques à travers la Russie grâce à des drones...'
+---
+
+<h4 class="wp-block-heading"><strong>Le 1er juin 2025, l’Ukraine a déclenché une offensive inédite en territoire ennemi : l’opération « Toile d’araignée ». En ciblant cinq bases stratégiques à travers la Russie grâce à des drones infiltrés des mois auparavant, Kiev a infligé un revers sévère à l’aviation stratégique russe. Une démonstration d’audace et de vulnérabilité.</strong></h4>
+
+<p>L’opération a les allures d’un scénario d’espionnage minutieusement orchestré. Lancée le 1er juin 2025, sous la supervision directe du président ukrainien Volodymyr Zelensky, l’opération « Toile d’araignée » (Spider’s Web) a permis aux services de sécurité ukrainiens (SBU) de frapper cinq bases militaires russes situées à des milliers de kilomètres du front. Selon Kiev, 41 avions ont été endommagés ou détruits, dont des bombardiers stratégiques et des appareils de surveillance. Un chiffre à prendre avec prudence, mais qui témoigne d’un exploit tactique inédit par son ampleur comme par sa portée psychologique.</p>
+
+<h5 class="wp-block-heading"><strong>Une opération d’infiltration sans précédent</strong></h5>
+
+<p>Ce n’est pas depuis l’Ukraine que les drones ont été lancés. Pendant près de 18 mois, les services ukrainiens ont patiemment introduit sur le sol russe des drones FPV (first-person view), dissimulés dans des cabines en bois semblables à des abris de chantier. Transportées par camion à travers des régions reculées, ces unités mobiles étaient installées à proximité de bases militaires, en apparence banales et difficilement détectables.<br>Cette logistique souterraine a permis de déployer des drones armés depuis l’intérieur même du territoire russe, échappant aux radars et contournant les défenses anti-aériennes classiques. Le 1er juin, les attaques ont été lancées de manière simultanée depuis cinq sites distincts : Belaya (Irkoutsk), Dyagilevo (Riazan), Ivanovo Severny, Olenya (région de Mourmansk) et Ukrainka (région de l’Amour). Seule cette dernière n’a pas pu être activée : le camion aurait explosé prématurément, selon des sources proches de l’opération.</p>
+
+<h5 class="wp-block-heading"><strong>Sabotage stratégique et embarras à Moscou</strong></h5>
+
+<p>Les cibles étaient de haut niveau : des bombardiers Tupolev Tu-95, Tu-160 et Tu-22M3, ainsi que des avions A-50 de veille radar, tous indispensables aux frappes de missiles longue portée et à la surveillance stratégique russe. La majorité de ces appareils étaient stationnés à découvert, sur des pistes non protégées, malgré les alertes répétées des analystes militaires russes.<br>L’onde de choc est aussi politique. Plusieurs blogueurs pro-guerre russes, dont le très suivi Rybar, ont publiquement critiqué l’état-major russe, dénonçant l’absence d’abris durcis et l’impréparation face aux risques d’infiltration. Des engagements, pris il y a des mois, n’auraient jamais été tenus, malgré des signaux d’alerte répétés.<br>Enfin, cette opération met crûment en lumière les lacunes du renseignement intérieur russe. Que des dizaines de drones soient stockés et activés depuis le territoire national sans interception préalable constitue un camouflet pour le FSB, accusé de prioriser la répression politique au détriment de la contre-ingérence militaire.<br>L’Ukraine, par cette opération, a fait voler en éclats le mythe de l’invulnérabilité du cœur russe. Mais elle a aussi ouvert une nouvelle ère tactique, où le sabotage de l’intérieur devient une arme redoutable. En brisant la barrière symbolique du territoire russe, Kiev a fissuré un récit stratégique. Reste à savoir comment Moscou colmatera la brèche.</p>

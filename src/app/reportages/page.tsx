@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getAllPosts } from '@/lib/posts';
+import { getPostsByCategory } from '@/lib/posts';
 import ArticleCard from '@/components/ArticleCard';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -8,20 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function ReportagesPage() {
-  const allPosts = getAllPosts();
-
-  const reportages = allPosts.filter(post => {
-    const title = post.post_title.toLowerCase();
-    const content = post.post_content.toLowerCase();
-    return (
-      title.includes('reportage') ||
-      title.includes('enquête') ||
-      title.includes('enquete') ||
-      title.includes('portrait') ||
-      title.includes('investigation') ||
-      content.includes('reportage') && title.includes(':')
-    );
-  });
+  const reportages = getPostsByCategory('reportage');
 
   return (
     <div>
@@ -49,7 +36,7 @@ export default function ReportagesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
               {reportages.slice(1).map((post, i) => (
-                <ScrollReveal key={post.ID} delay={i % 3 * 80}>
+                <ScrollReveal key={post.slug} delay={i % 3 * 80}>
                   <ArticleCard post={post} />
                 </ScrollReveal>
               ))}

@@ -11,7 +11,7 @@ interface Props {
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
-    slug: post.post_name,
+    slug: post.slug,
   }));
 }
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return { title: 'Article non trouvé' };
   return {
-    title: post.post_title,
+    title: post.title,
   };
 }
 
@@ -38,10 +38,10 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   const allPosts = getAllPosts();
-  const currentIndex = allPosts.findIndex(p => p.post_name === slug);
+  const currentIndex = allPosts.findIndex(p => p.slug === slug);
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-  const readTime = estimateReadingTime(post.post_content);
+  const readTime = estimateReadingTime(post.body);
 
   return (
     <>
@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <img
             src={post.featuredImage}
-            alt={post.post_title}
+            alt={post.title}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-[#1a1a2e]/40 to-transparent" />
@@ -74,7 +74,7 @@ export default async function ArticlePage({ params }: Props) {
             <div className="max-w-4xl mx-auto px-6 pb-12">
               <div className="gold-line mb-5" />
               <h1 className="font-[var(--font-serif)] text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-4 tracking-tight">
-                {post.post_title}
+                {post.title}
               </h1>
               <div className="flex items-center gap-4 flex-wrap">
                 <div className="flex items-center gap-3">
@@ -92,7 +92,7 @@ export default async function ArticlePage({ params }: Props) {
                 </div>
                 <span className="w-1 h-1 rounded-full bg-[var(--color-gold)]" />
                 <time className="font-[var(--font-sans)] text-[0.6rem] text-white/40 uppercase tracking-[0.15em]">
-                  {formatDate(post.post_date)}
+                  {formatDate(post.date)}
                 </time>
                 <span className="w-1 h-1 rounded-full bg-[var(--color-gold)]" />
                 <span className="font-[var(--font-sans)] text-[0.6rem] text-white/40">
@@ -116,7 +116,7 @@ export default async function ArticlePage({ params }: Props) {
             </Link>
             <div className="gold-line mb-5" />
             <h1 className="font-[var(--font-serif)] text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight mb-5">
-              {post.post_title}
+              {post.title}
             </h1>
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full overflow-hidden bg-[var(--color-rule)]">
@@ -125,7 +125,7 @@ export default async function ArticlePage({ params }: Props) {
               <div>
                 <p className="font-[var(--font-sans)] text-sm font-semibold leading-none">Axel Mongin</p>
                 <p className="font-[var(--font-sans)] text-[0.6rem] text-[var(--color-ink-lighter)] mt-0.5">
-                  {formatDate(post.post_date)} &middot; {readTime} min
+                  {formatDate(post.date)} &middot; {readTime} min
                 </p>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default async function ArticlePage({ params }: Props) {
         {/* Content */}
         <div
           className="article-content drop-cap"
-          dangerouslySetInnerHTML={{ __html: post.post_content }}
+          dangerouslySetInnerHTML={{ __html: post.body }}
         />
 
         {/* End ornament */}
@@ -154,7 +154,7 @@ export default async function ArticlePage({ params }: Props) {
           </span>
           <div className="gold-line" />
           <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.post_title)}`}
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-full border border-[var(--color-rule)] flex items-center justify-center text-[var(--color-ink-lighter)] hover:text-white hover:bg-[var(--color-ink)] hover:border-[var(--color-ink)] transition-all duration-300"
@@ -176,7 +176,7 @@ export default async function ArticlePage({ params }: Props) {
             </svg>
           </a>
           <a
-            href={`mailto:?subject=${encodeURIComponent(post.post_title)}`}
+            href={`mailto:?subject=${encodeURIComponent(post.title)}`}
             className="w-9 h-9 rounded-full border border-[var(--color-rule)] flex items-center justify-center text-[var(--color-ink-lighter)] hover:text-white hover:bg-[var(--color-ink)] hover:border-[var(--color-ink)] transition-all duration-300"
             aria-label="Email"
           >
@@ -190,34 +190,34 @@ export default async function ArticlePage({ params }: Props) {
         <nav className="pt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {prevPost && (
-              <Link href={`/articles/${prevPost.post_name}`} className="group block hover-lift">
+              <Link href={`/articles/${prevPost.slug}`} className="group block hover-lift">
                 <div className="flex items-start gap-4 p-5 border border-[var(--color-rule)] hover:border-[var(--color-gold)] transition-colors duration-500">
                   {prevPost.featuredImage && (
                     <div className="w-16 h-16 flex-shrink-0 overflow-hidden">
-                      <img src={prevPost.featuredImage} alt={prevPost.post_title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                      <img src={prevPost.featuredImage} alt={prevPost.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                     </div>
                   )}
                   <div className="min-w-0">
                     <span className="font-[var(--font-sans)] text-[0.5rem] font-bold text-[var(--color-gold)] uppercase tracking-[0.2em]">&larr; Précédent</span>
                     <p className="font-[var(--font-serif)] text-sm font-bold mt-1 leading-snug group-hover:text-[var(--color-accent)] transition-colors truncate">
-                      {prevPost.post_title}
+                      {prevPost.title}
                     </p>
                   </div>
                 </div>
               </Link>
             )}
             {nextPost && (
-              <Link href={`/articles/${nextPost.post_name}`} className="group block hover-lift md:ml-auto">
+              <Link href={`/articles/${nextPost.slug}`} className="group block hover-lift md:ml-auto">
                 <div className="flex items-start gap-4 p-5 border border-[var(--color-rule)] hover:border-[var(--color-gold)] transition-colors duration-500 flex-row-reverse text-right">
                   {nextPost.featuredImage && (
                     <div className="w-16 h-16 flex-shrink-0 overflow-hidden">
-                      <img src={nextPost.featuredImage} alt={nextPost.post_title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                      <img src={nextPost.featuredImage} alt={nextPost.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                     </div>
                   )}
                   <div className="min-w-0">
                     <span className="font-[var(--font-sans)] text-[0.5rem] font-bold text-[var(--color-gold)] uppercase tracking-[0.2em]">Suivant &rarr;</span>
                     <p className="font-[var(--font-serif)] text-sm font-bold mt-1 leading-snug group-hover:text-[var(--color-accent)] transition-colors truncate">
-                      {nextPost.post_title}
+                      {nextPost.title}
                     </p>
                   </div>
                 </div>

@@ -1,0 +1,20 @@
+---
+title: 'Meloni face à Trump : diplomatie sous haute tension'
+slug: meloni-face-a-trump-diplomatie-sous-haute-tension
+date: '2025-04-17T17:06:26.000Z'
+featuredImage: /uploads/2025/04/Trump-Meloni.jpg
+category: article
+excerpt: 'Ce 17 avril, la cheffe du gouvernement italien Giorgia Meloni est devenue la première dirigeante européenne à être reçue officiellement par Donald Trump depuis son retour à la Maison-Blanche. Dans un...'
+---
+
+<h4 class="wp-block-heading">Ce 17 avril, la cheffe du gouvernement italien Giorgia Meloni est devenue la première dirigeante européenne à être reçue officiellement par Donald Trump depuis son retour à la Maison-Blanche. Dans un climat tendu par les menaces tarifaires américaines, la dirigeante italienne cherche à se positionner comme médiatrice entre une Union européenne inquiète et un président américain en quête d’affirmation.</h4>
+
+<p>Le début du mois d’avril a été marqué par l’annonce soudaine de droits de douane de 25 % sur les importations européennes d’acier, d’aluminium et d’automobiles, assortie d’une surtaxe de 20 % sur une vaste gamme de produits agricoles et manufacturés. Face à la levée de boucliers à Bruxelles, Washington a finalement suspendu ces mesures pour 90 jours, laissant une étroite fenêtre de négociation.<br>C’est dans ce contexte que Giorgia Meloni s’est rendue aujourd’hui à Washington. Avec près de 40 milliards d’euros d’excédent commercial avec les États-Unis, l’Italie figure parmi les pays les plus exposés. Mais la dirigeante italienne n’agit pas seulement pour Rome : en lien étroit avec la présidente de la Commission européenne Ursula von der Leyen, elle entend porter un message commun européen. À la Maison-Blanche, elle plaide pour une désescalade et la reprise d’un dialogue économique structuré.</p>
+
+<h3 class="wp-block-heading">Entre affinités idéologiques et divergences stratégiques</h3>
+
+<p>Si Meloni a été la première dirigeante européenne à rencontrer Trump, ce n’est pas un hasard. Les deux leaders partagent une proximité politique assumée : conservatisme culturel, fermeté migratoire, souverainisme affirmé. L’Italienne ne cache pas son admiration pour l’ascension politique du président américain, ni sa volonté de représenter un courant européen capable de dialoguer avec Washington sans complexes.<br>Mais la convergence a ses limites. Sur l’Ukraine, Giorgia Meloni a réaffirmé un soutien sans faille à Kiev, là où Trump, lui, souffle le chaud et le froid, critiquant régulièrement l’aide américaine. Sur ce point, la dirigeante italienne a souligné la nécessité de maintenir l’unité euro-atlantique, tout en défendant la souveraineté des États. Une position d’équilibre, qui cherche à conjuguer convictions personnelles, intérêts nationaux et devoirs européens.</p>
+
+<h3 class="wp-block-heading">L’Europe sur le qui-vive</h3>
+
+<p>La tournée américaine de Meloni, aussi stratégique soit-elle, n’est pas sans susciter des crispations à Bruxelles. À Paris et Berlin, on observe avec prudence cette prise d’initiative. Certains redoutent une personnalisation excessive des relations UE–USA, d’autres saluent la tentative d’ouverture dans un moment où le dialogue est fragile.<br>Giorgia Meloni joue donc gros : renforcer le rôle international de l’Italie, apparaître comme une interlocutrice privilégiée de Washington, mais sans donner l’image d’un cavalier seul. Si elle parvient à obtenir des concessions concrètes sur les droits de douane ou à rouvrir des canaux de négociation, elle pourrait conforter sa stature de leader européen. Dans le cas contraire, elle s’exposerait à des critiques sur son alignement idéologique et à une marginalisation diplomatique.<br>En ce jour de bras de fer diplomatique, Giorgia Meloni marche sur un fil tendu entre deux continents. Face à un Trump imprévisible et une Europe vigilante, sa capacité à incarner un point d’équilibre crédible pourrait non seulement redéfinir le rôle international de l’Italie, mais aussi façonner son avenir comme figure incontournable du conservatisme européen.</p>

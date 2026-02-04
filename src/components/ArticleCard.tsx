@@ -13,25 +13,25 @@ function estimateReadingTime(html: string): number {
 }
 
 export default function ArticleCard({ post, featured = false }: ArticleCardProps) {
-  const excerpt = extractExcerpt(post.post_content, featured ? 220 : 120);
-  const date = formatDate(post.post_date);
-  const readTime = estimateReadingTime(post.post_content);
+  const excerpt = extractExcerpt(post.body, featured ? 220 : 120);
+  const date = formatDate(post.date);
+  const readTime = estimateReadingTime(post.body);
 
   if (featured) {
     return (
-      <Link href={`/articles/${post.post_name}`} className="block group">
+      <Link href={`/articles/${post.slug}`} className="block group">
         <article className="card-overlay relative h-[480px] md:h-[520px] overflow-hidden">
           {post.featuredImage && (
             <img
               src={post.featuredImage}
-              alt={post.post_title}
+              alt={post.title}
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[800ms]"
             />
           )}
           <div className="card-content absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <span className="tag mb-4">À la une</span>
             <h2 className="font-[var(--font-serif)] text-2xl md:text-4xl font-bold text-white leading-tight mb-4 max-w-2xl">
-              {post.post_title}
+              {post.title}
             </h2>
             <p className="font-[var(--font-body)] text-white/60 leading-relaxed mb-5 max-w-xl hidden md:block">
               {excerpt}
@@ -55,13 +55,13 @@ export default function ArticleCard({ post, featured = false }: ArticleCardProps
   }
 
   return (
-    <Link href={`/articles/${post.post_name}`} className="block group">
+    <Link href={`/articles/${post.slug}`} className="block group">
       <article className="card-3d img-reveal h-full">
         {post.featuredImage && (
           <div className="aspect-[3/2] overflow-hidden">
             <img
               src={post.featuredImage}
-              alt={post.post_title}
+              alt={post.title}
               className="w-full h-full object-cover"
             />
           </div>
@@ -78,7 +78,7 @@ export default function ArticleCard({ post, featured = false }: ArticleCardProps
             </span>
           </div>
           <h3 className="font-[var(--font-serif)] text-lg font-bold leading-snug mb-2 group-hover:text-[var(--color-accent)] transition-colors duration-300">
-            {post.post_title}
+            {post.title}
           </h3>
           <p className="font-[var(--font-body)] text-sm text-[var(--color-ink-light)] leading-relaxed line-clamp-3">
             {excerpt}

@@ -40,7 +40,7 @@ export default function ArticlesPage() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {rest.map((post, i) => (
-            <ScrollReveal key={post.ID} delay={i % 3 * 80}>
+            <ScrollReveal key={post.slug} delay={i % 3 * 80}>
               <ArticleCard post={post} />
             </ScrollReveal>
           ))}

@@ -1,0 +1,16 @@
+---
+title: 'Opération Sindoor : l’Inde frappe, le Pakistan riposte, la spirale du chaos'
+slug: operation-sindoor-linde-frappe-le-pakistan-riposte-la-spirale-du-chaos
+date: '2025-05-07T15:19:10.000Z'
+featuredImage: /uploads/2025/05/Sindoor.jpg
+category: article
+excerpt: 'Dans la nuit du 7 mai 2025, l’Inde a mené une série de frappes aériennes contre des cibles terroristes présumées au Cachemire pakistanais. Le Pakistan a riposté le lendemain, déclenchant une escalade...'
+---
+
+<h4 class="wp-block-heading">Dans la nuit du 7 mai 2025, l’Inde a mené une série de frappes aériennes contre des cibles terroristes présumées au Cachemire pakistanais. Le Pakistan a riposté le lendemain, déclenchant une escalade militaire entre deux puissances nucléaires. Alors que les tensions montent, les civils paient le prix fort et la communauté internationale s’inquiète d’un conflit incontrôlable.</h4>
+
+<p>Le 7 mai à minuit, l’armée indienne lance l’« Opération Sindoor » : une offensive aérienne fulgurante de 23 minutes ciblant neuf sites au Pakistan et au Cachemire sous administration pakistanaise. L’objectif : détruire des infrastructures affiliées aux groupes djihadistes Lashkar-e-Taiba et Jaish-e-Mohammed, que New Delhi accuse d’avoir orchestré plusieurs attaques récentes sur son sol.<br>Des avions Rafale frappent avec des missiles SCALP et des bombes guidées AASM Hammer. L’Inde revendique l’élimination d’une centaine de combattants. Islamabad, de son côté, parle d’<em>« agression non provoquée »</em>, dénonce 31 morts civils (dont des enfants) et accuse l’Inde d’avoir visé des zones habitées.<br>Dès le lendemain, le Pakistan réplique. Des drones armés, pour partie d’origine turque et chinoise, visent des installations militaires dans le Jammu-et-Cachemire indien. Des tirs d’artillerie atteignent les villes de Pathankot, Udhampur et Jammu. L’Inde affirme avoir neutralisé une partie de ces attaques grâce à son système de défense S-400, tout en poursuivant ses frappes sur les défenses pakistanaises autour de Lahore. Depuis le début des hostilités, au moins 35 morts sont à déplorer des deux côtés de la frontière.</p>
+
+<h5 class="wp-block-heading">Une crise qui menace de déborder</h5>
+
+<p>Au-delà de la ligne de front, les signes d’un conflit généralisé se multiplient. En Inde, le gouvernement suspend l’IPL, ferme plusieurs aéroports du nord et ordonne des évacuations massives. Des coupures d’électricité sont rapportées à Delhi, Amritsar et Srinagar. Le pays se prépare à un possible affrontement de grande ampleur.<br>Le Pakistan, de son côté, brandit la menace nucléaire. Son ministre de la Défense évoque une « menace réelle et imminente ». En réponse, l’Inde rappelle le passé du Pakistan en matière de terrorisme, citant la présence d’Oussama ben Laden sur son territoire comme symbole d’un laxisme stratégique.<br>Les appels à la désescalade se multiplient. États-Unis, Union européenne, Iran, pays du Golfe… Tous appellent à la retenue. Mais jusqu’à présent, aucune médiation crédible n’a été engagée, et les tensions continuent de monter.<br>Alors que les affrontements s’intensifient et que les pertes civiles s’alourdissent, une question s’impose : l’Inde et le Pakistan peuvent-ils encore faire marche arrière, ou ont-ils enclenché une mécanique de guerre difficile à arrêter ?</p>
